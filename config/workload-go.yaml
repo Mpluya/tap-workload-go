@@ -1,0 +1,36 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  labels:
+    app.kubernetes.io/part-of: go-app
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    tanzu.app.live.view: "true"
+  name: go-app
+  namespace: demo
+spec:
+  build:
+    env:
+      - name: BP_OCI_AUTHORS
+        value: "mlarge@vmware.com"
+      - name: BP_OCI_DESCRIPTION
+        value: "Demo go app"
+      - name: BP_OCI_VERSION
+        value: "0.0.1"
+  env:
+      - name: TARGET
+        value: "Tanzu"
+  params:
+  - name: scanning_source_policy
+    value: lax-scan-policy
+  - name: scanning_image_policy
+    value: lax-scan-policy
+  - name: testing_pipeline_matching_labels
+    value:
+      apps.tanzu.vmware.com/language: go
+      apps.tanzu.vmware.com/pipeline: test
+  source:
+    git:
+      ref:
+        branch: main
+      url: ssh://git@github.com/Mpluya/tap-workload-go
