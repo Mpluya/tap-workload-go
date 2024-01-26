@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: go-app
+  namespace: demo
+  description: Hello World - in go
+  tags:
+    - app-accelerator
+    - go
+    - web
+    - tanzu
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=go-app'
+spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team
