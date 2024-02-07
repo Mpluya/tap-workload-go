@@ -5,6 +5,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+
+	cdx "github.com/CycloneDX/cyclonedx-go"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -18,7 +20,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	log.Print("helloworld: starting server...")
-
+	bom := cdx.NewBOM()
+	log.Print(bom)
 	http.HandleFunc("/", handler)
 
 	port := os.Getenv("PORT")
