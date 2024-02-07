@@ -23,8 +23,8 @@ spec:
   params:
   - name: buildServiceBindings
     value:
-      - kind: Secret
-        name: gitops-basic-auth
+    - kind: Secret
+      name: git-credentials
   - name: scanning_source_policy
     value: lax-scan-policy
   - name: scanning_image_policy
