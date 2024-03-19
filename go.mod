@@ -1,6 +1,6 @@
 module helloworld
 
-go 1.21
+go 1.22
 
 require (
 	github.com/CycloneDX/cyclonedx-go v0.8.0
