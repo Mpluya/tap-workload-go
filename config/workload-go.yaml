@@ -21,10 +21,10 @@ spec:
       - name: TARGET
         value: "Tanzu"
   params:
-  - name: buildServiceBindings
-    value:
-    - kind: Secret
-      name: git-credentials
+#  - name: buildServiceBindings
+#    value:
+#    - kind: Secret
+#      name: git-credentials
   - name: scanning_source_policy
     value: lax-scan-policy
   - name: scanning_image_policy
