@@ -33,6 +33,9 @@ spec:
     value:
       apps.tanzu.vmware.com/language: go
       apps.tanzu.vmware.com/pipeline: test
+  - name: additionalTags
+    value:
+      - 'cxscssa.azurecr.io/tap-build/workloads/go-app-demo:20240402172340.0.0'
   source:
     git:
       ref:
