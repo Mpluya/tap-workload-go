@@ -3,4 +3,4 @@ schema-version = "0.2"
 
 [[io.buildpacks.build.env]]
 name='BP_IMAGE_LABELS'
-value='dev.carvel.package.version=1.0.3-alpha'
+value='app.version=0.0.1'
